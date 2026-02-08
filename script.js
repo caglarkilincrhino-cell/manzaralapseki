@@ -323,24 +323,7 @@ function updateLoadingProgress() {
 // Hide loading screen
 function hideLoadingScreen() {
     loadingScreen.classList.add('hidden');
-
-    // Show welcome popup after loading
-    setTimeout(() => {
-        const welcomePopup = document.getElementById('welcomePopup');
-        if (welcomePopup) {
-            welcomePopup.classList.add('show');
-        }
-    }, 500);
-
     updateSlideshow(); // Update slideshow after loading
-}
-
-// Close welcome popup
-function closeWelcomePopup() {
-    const welcomePopup = document.getElementById('welcomePopup');
-    if (welcomePopup) {
-        welcomePopup.classList.remove('show');
-    }
 }
 
 
