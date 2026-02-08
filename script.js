@@ -23,6 +23,27 @@ function init() {
     fixViewportHeight();
     preloadImagesWithProgress();
     addEventListeners();
+    fixSafariZoom();
+}
+
+// Safari zoom kayma düzeltmesi
+function fixSafariZoom() {
+    // Scroll pozisyonunu sürekli sıfırla
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+    // Scroll olduğunda anında düzelt
+    window.addEventListener('scroll', function () {
+        window.scrollTo(0, 0);
+    }, { passive: false });
+
+    // Touchend'de de düzelt (zoom sonrası)
+    document.addEventListener('touchend', function () {
+        setTimeout(function () {
+            window.scrollTo(0, 0);
+        }, 100);
+    }, { passive: true });
 }
 
 // Pause all videos when changing slides
