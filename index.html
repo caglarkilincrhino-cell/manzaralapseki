@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Lapseki Sunumu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-text">Lapseki Sunumu</div>
+            <div class="loading-subtext">Yükleniyor...</div>
+            <div class="progress-container">
+                <div class="progress-bar-loading" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="slide active">
+            <img src="slides/slide-01.jpg" alt="Slayt 1">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-02.jpg" alt="Slayt 2">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-03.jpg" alt="Slayt 3">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-04.jpg" alt="Slayt 4">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-05.jpg" alt="Slayt 5">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-06.jpg" alt="Slayt 6">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-07.jpg" alt="Slayt 7">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-08.jpg" alt="Slayt 8">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-09.jpg" alt="Slayt 9">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-10.jpg" alt="Slayt 10">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-11.jpg" alt="Slayt 11">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-12.jpg" alt="Slayt 12">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-13.jpg" alt="Slayt 13">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-14.jpg" alt="Slayt 14">
+        </div>
+        <div class="slide">
+            <img src="slides/slide-15.jpg" alt="Slayt 15">
+        </div>
+        <div class="slide video-slide">
+            <div class="video-container local-video">
+                <video id="video1" playsinline controls>
+                    <source src="https://pub-c6b4918e8509456288a36480f22cff66.r2.dev/Manzara-Lapseki.mp4"
+                        type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+        <div class="slide video-slide">
+            <div class="video-container local-video">
+                <video id="video2" playsinline controls>
+                    <source src="https://pub-c6b4918e8509456288a36480f22cff66.r2.dev/Lapseki-Tanitim.mp4"
+                        type="video/mp4">
+                    Tarayıcınız video etiketini desteklemiyor.
+                </video>
+            </div>
+        </div>
+
+        <!-- Canva Style Navigation Bar -->
+        <div class="canva-controls">
+            <div class="canva-left-controls">
+                <div class="page-counter">
+                    <span id="currentSlide">1</span> / <span id="totalSlides">17</span>
+                </div>
+                <div class="nav-arrows">
+                    <button class="nav-arrow" onclick="prevSlide()" aria-label="Önceki">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <button class="nav-arrow" onclick="nextSlide()" aria-label="Sonraki">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Bottom Progress Bar -->
+        <div class="progress-bar-bottom">
+            <div class="progress-fill-bottom" id="progressFill"></div>
+        </div>
+
+
+
+
+
+
+
+        <!-- Info Button -->
+        <button class="info-btn" id="infoBtn" aria-label="Bilgi">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Info Panel -->
+    <div class="info-panel" id="infoPanel">
+        <div class="info-content">
+            <h2>Lapseki Sunumu</h2>
+            <p>Bu sunum telefonda yatay modda görüntülenmek üzere optimize edilmiştir.</p>
+            <h3>Kontroller:</h3>
+            <ul>
+                <li>🖱️ <strong>Fare/Dokunma:</strong> Yan butonlara tıklayın</li>
+                <li>⌨️ <strong>Klavye:</strong> Ok tuşlarını kullanın</li>
+                <li>📱 <strong>Dokunmatik:</strong> Sağa/sola kaydırın</li>
+                <li>📍 <strong>Noktalar:</strong> Doğrudan bir slayta gidin</li>
+            </ul>
+            <h3>📱 Mobilde En İyi Görüntü:</h3>
+            <ul>
+                <li>✅ Telefonu <strong>yatay moda</strong> çevirin</li>
+                <li>✅ <strong>Tam ekran</strong> butonuna basın (sol üst)</li>
+                <li>✅ Tarayıcı araç çubuklarını gizleyin</li>
+            </ul>
+            <button class="close-info-btn" onclick="toggleInfo()">Kapat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
