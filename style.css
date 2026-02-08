@@ -126,6 +126,81 @@ body {
     }
 }
 
+/* Welcome Popup */
+.welcome-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+    /* Hidden by default, shown by JS */
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease;
+}
+
+.welcome-popup.show {
+    display: flex;
+}
+
+.popup-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.5s ease;
+}
+
+.popup-content h2 {
+    margin: 0 0 20px 0;
+    font-size: 32px;
+    color: white;
+}
+
+.popup-content p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+}
+
+.popup-btn {
+    margin-top: 25px;
+    padding: 12px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background: white;
+    color: #667eea;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.popup-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
 /* Slideshow Container */
 .slideshow-container {
     position: relative;
@@ -154,12 +229,9 @@ body {
     visibility: hidden;
     z-index: 1;
 
-    /* SADECE transform animasyonlu - opacity ANINDA değişir */
-    transition-property: transform;
-    transition-duration: 0.3s;
-    /* Daha kısa = daha az titreme */
-    transition-timing-function: linear;
-    /* En stabil timing */
+
+    /* TAMAMEN TİTREMESİZ: Transition yok, instant geçiş */
+    transition: none;
 
     /* Agresif Safari titreme fix */
     -webkit-backface-visibility: hidden;
