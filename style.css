@@ -21,17 +21,17 @@ body {
     background: #000;
     overflow: hidden;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
-    touch-action: pan-x pan-y;
-    /* Zoom engelle, sadece kaydırma izin ver */
-    overscroll-behavior: none;
+    /* Zoom izin ver ama kayma engelle */
+    overscroll-behavior: contain;
     -webkit-overflow-scrolling: auto;
-    -webkit-user-select: none;
-    user-select: none;
-    /* Zoom kaymasını engelle */
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
+    touch-action: pinch-zoom;
+    /* Sadece zoom'a izin ver, scroll yok */
 }
 
 /* Loading Screen */
