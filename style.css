@@ -19,14 +19,19 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
     background: #000;
-    /* Pure black instead of gradient */
     overflow: hidden;
     position: fixed;
     width: 100%;
     height: 100%;
-    touch-action: manipulation;
+    touch-action: pan-x pan-y;
+    /* Zoom engelle, sadece kaydırma izin ver */
     overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    /* Zoom kaymasını engelle */
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
 }
 
 /* Loading Screen */
